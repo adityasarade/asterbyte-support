@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AsterByte privacy policy.">
+  <title>Privacy Policy — AsterByte</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body><main>
+  <nav><a class="brand" href="index.html">AsterByte</a><span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a></span></nav>
+  <article class="legal">
+    <p class="eyebrow">Effective 17 September 2026</p>
+    <h1>Privacy Policy</h1>
+    <p>This policy explains how the independent AsterByte project processes data when people install or use the AsterByte Discord application. AsterByte is currently a limited private beta operated from India.</p>
+
+    <h2>Data we process</h2>
+    <ul>
+      <li>Discord identifiers for users, servers, channels, roles, interactions, and messages needed to route and authorize requests.</li>
+      <li>Prompts submitted through commands, mentions, replies, or the configured prefix.</li>
+      <li>Recent channel messages only when a user invokes a summary feature or when a separately disclosed automation is enabled.</li>
+      <li>Optional conversation memory, reminder text, reusable workflow instructions, server settings, quota records, entitlement state, and confirmed-action audit records.</li>
+      <li>Operational metadata such as provider/model, timestamps, success status, and error category. Stateless prompt text is not written to application logs or the database by default.</li>
+    </ul>
+
+    <h2>Why we process it</h2>
+    <p>We process this information to provide requested AI responses and automations, enforce Discord permissions and quotas, prevent abuse and duplicate execution, deliver reminders, maintain opt-in memory, support users, and improve reliability and security.</p>
+
+    <h2>AI providers and subprocessors</h2>
+    <p>Prompt content needed for a response is sent to the AI provider configured for the request. The private beta currently supports Groq and may support OpenRouter. For action-like prompts, relevant current server channel and role names/IDs may be sent so the provider can propose valid targets. These providers process data under their own terms and privacy policies. Discord processes data required to operate the Discord platform.</p>
+
+    <h2>Storage and retention</h2>
+    <ul>
+      <li>Stateless <code>/ask</code> prompt and completion text is not stored by AsterByte after the response.</li>
+      <li>Opt-in chat memory retains only the configured recent-message window until the user resets or deletes it.</li>
+      <li>Pending reminders and workflow definitions remain until executed, cancelled, or deleted. Completed reminder records are deleted after approximately 30 days.</li>
+      <li>Usage metadata and completed action audit records are deleted after approximately 90 days.</li>
+      <li>Backups, when production hosting is introduced, may retain deleted data for a limited recovery period disclosed here before use.</li>
+    </ul>
+
+    <h2>Choices and deletion</h2>
+    <p>Use <code>/privacy</code> for an in-product disclosure and <code>/data status</code>, <code>/data export</code>, or <code>/data delete</code> to inspect or delete user-scoped records for a server. Server managers can delete server configuration and shared workflows by removing the app or contacting support. Some minimal security records may be retained where reasonably necessary to prevent abuse or comply with law.</p>
+
+    <h2>Security</h2>
+    <p>AsterByte applies tenant scoping, parameterized storage, strict schemas, quotas, timeouts, requester-bound confirmations, repeated permission checks, action allowlists, audit records, and restricted automated mentions. No service can guarantee absolute security. Never send passwords, bot tokens, API keys, payment details, or highly sensitive personal data to the bot.</p>
+
+    <h2>Children</h2>
+    <p>AsterByte is not directed to children below the minimum age required to use Discord in their country. If you believe a child has provided personal data contrary to applicable rules, contact support.</p>
+
+    <h2>International processing and changes</h2>
+    <p>Discord and AI providers may process information in other countries. We may update this policy as the beta changes. Material changes will update the effective date and, where practical, be announced through the app or support channel.</p>
+
+    <h2>Contact</h2>
+    <p>Open a privacy ticket in the <a href="https://github.com/adityasarade/asterbyte-support/issues">AsterByte support tracker</a>. Do not post secrets or private message content in a public issue; request a private contact route if necessary.</p>
+  </article>
+  <footer>© 2026 AsterByte</footer>
+</main></body>
+</html>
