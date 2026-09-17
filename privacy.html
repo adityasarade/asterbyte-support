@@ -18,7 +18,7 @@
     <ul>
       <li>Discord identifiers for users, servers, channels, roles, interactions, and messages needed to route and authorize requests.</li>
       <li>Prompts submitted through commands, mentions, replies, or the configured prefix.</li>
-      <li>Recent channel messages only when a user invokes a summary feature or when a separately disclosed automation is enabled.</li>
+      <li>Recent channel messages only when a user invokes a summary feature or a server manager enables a scheduled digest after AsterByte posts a visible notice in that channel.</li>
       <li>Optional conversation memory, reminder text, reusable workflow instructions, server settings, quota records, entitlement state, and confirmed-action audit records.</li>
       <li>Operational metadata such as provider/model, timestamps, success status, and error category. Stateless prompt text is not written to application logs or the database by default.</li>
     </ul>
@@ -35,6 +35,7 @@
       <li>Opt-in chat memory retains only the configured recent-message window until the user resets or deletes it.</li>
       <li>Pending reminders and workflow definitions remain until executed, cancelled, or deleted. Completed reminder records are deleted after approximately 30 days.</li>
       <li>Usage metadata and completed action audit records are deleted after approximately 90 days.</li>
+      <li>Scheduled digest definitions expire after 30 days unless a manager renews them. AsterByte does not persist the raw channel messages processed for a digest.</li>
       <li>Backups, when production hosting is introduced, may retain deleted data for a limited recovery period disclosed here before use.</li>
     </ul>
 
