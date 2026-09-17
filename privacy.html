@@ -19,7 +19,7 @@
       <li>Discord identifiers for users, servers, channels, roles, interactions, and messages needed to route and authorize requests.</li>
       <li>Prompts submitted through commands, mentions, replies, or the configured prefix.</li>
       <li>Recent channel messages only when a user invokes a summary feature or a server manager enables a scheduled digest after AsterByte posts a visible notice in that channel.</li>
-      <li>Optional conversation memory, reminder text, reusable workflow instructions, server settings, quota records, entitlement state, and confirmed-action audit records.</li>
+      <li>Optional conversation memory, reminder text, reusable workflow instructions, private-beta feedback, server settings, quota records, entitlement state, and confirmed-action audit records.</li>
       <li>Operational metadata such as provider/model, timestamps, success status, and error category. Stateless prompt text is not written to application logs or the database by default.</li>
     </ul>
 
@@ -40,7 +40,7 @@
     </ul>
 
     <h2>Choices and deletion</h2>
-    <p>Use <code>/privacy</code> for an in-product disclosure and <code>/data status</code>, <code>/data export</code>, or <code>/data delete</code> to inspect or delete user-scoped records for a server. Server managers can delete server configuration and shared workflows by removing the app or contacting support. Some minimal security records may be retained where reasonably necessary to prevent abuse or comply with law.</p>
+    <p>Use <code>/privacy</code> for an in-product disclosure and <code>/data status</code>, <code>/data export</code>, or <code>/data delete</code> to inspect, export, or delete user-scoped records for a server. The export includes the stored record contents, not only counts. Server managers can delete server configuration and shared workflows by removing the app or contacting support. Some minimal security records may be retained where reasonably necessary to prevent abuse or comply with law.</p>
 
     <h2>Security</h2>
     <p>AsterByte applies tenant scoping, parameterized storage, strict schemas, quotas, timeouts, requester-bound confirmations, repeated permission checks, action allowlists, audit records, and restricted automated mentions. No service can guarantee absolute security. Never send passwords, bot tokens, API keys, payment details, or highly sensitive personal data to the bot.</p>
