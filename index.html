@@ -3,40 +3,59 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AsterByte is a permission-aware AI operations assistant for Discord communities.">
-  <title>AsterByte — AI operations for Discord</title>
-  <link rel="stylesheet" href="styles.css?v=20261003-4">
+  <meta name="description" content="Meet AsterByte, your Discord community's useful little robot. Catch up, make plans, and add a little fun—with permissions kept in your hands.">
+  <meta name="theme-color" content="#090d18">
+  <meta property="og:title" content="AsterByte — Your server's little sidekick">
+  <meta property="og:description" content="Less scrolling. More doing. A helpful Discord robot with a little personality and clear boundaries.">
+  <meta property="og:image" content="https://adityasarade.github.io/asterbyte-support/assets/asterbyte-mascot-v1.png">
+  <meta property="og:type" content="website">
+  <title>AsterByte — Your server's little sidekick</title>
+  <link rel="icon" href="assets/asterbyte-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20261003-5">
+  <script src="demo.js" defer></script>
 </head>
-<body>
+<body class="home">
+  <a class="skip-link" href="#content">Skip to content</a>
   <main>
-    <nav><a class="brand" href="index.html">AsterByte<span class="brand-dot">✦</span></a><span><a href="guide.html">Guide</a><a href="plans.html">Plans</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a></span></nav>
-    <section class="hero">
-      <p class="eyebrow">Your community's useful little robot</p>
-      <h1>Less catching up.<br>More doing together.</h1>
-      <p>AsterByte turns Discord conversations into clear next steps. Ask in normal language, save a useful workflow, or summon a little fun. Server changes stay under your control.</p>
-      <div class="actions"><a class="button" href="guide.html">Meet AsterByte →</a><a href="plans.html">What we're building</a></div>
-      <div class="notice">Invite-only private beta · No payments · Not yet Discord-verified · Runs while the operator's Mac is online</div>
+    <nav aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/asterbyte-mark.svg" width="30" height="30" alt="">AsterByte<span class="brand-dot" aria-hidden="true">✦</span></a><span><a href="guide.html">Guide</a><a href="plans.html">Plans</a><a href="privacy.html">Privacy</a><a href="security.html">Security</a></span></nav>
+    <div class="beta-strip"><span class="beta-label">IN THE WORKSHOP</span> Invite-only beta. No payments. Not yet Discord-verified.</div>
+    <section class="hero hero-layout" id="content">
+      <div class="hero-copy">
+        <p class="eyebrow">Big server energy. Little robot.</p>
+        <h1>Your server's<br>little <em>sidekick.</em></h1>
+        <p>Less scrolling. More doing. AsterByte catches you up, helps your crew make plans, and brings a little fun—right where you already hang out.</p>
+        <div class="actions"><a class="button" href="guide.html">Meet your sidekick <span aria-hidden="true">↗</span></a><a class="secondary-link" href="#try-it">See it in action <span aria-hidden="true">↓</span></a></div>
+        <p class="hero-footnote">Ask like a human. Server changes still need permission.</p>
+      </div>
+      <figure class="mascot-stage">
+        <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+        <span class="stage-star star-one" aria-hidden="true">✦</span><span class="stage-star star-two" aria-hidden="true">✧</span>
+        <span class="mascot-greeting">hey, crew. <span aria-hidden="true">✌</span></span>
+        <img class="mascot" src="assets/asterbyte-mascot-v1.png" width="1254" height="1254" alt="AsterByte, an anime-style ivory and lavender chibi robot with glowing eyes, a star antenna and scarf, making a friendly peace sign." fetchpriority="high">
+        <figcaption><span aria-hidden="true">✦</span> AsterByte <span class="mascot-caption-note">helpful by design. a little goofy by choice.</span></figcaption>
+      </figure>
     </section>
-    <section class="chat-demo" aria-label="Example conversation, not a live bot">
-      <p class="eyebrow">One conversation. Useful outcomes.</p>
-      <p><span class="chat-name">You</span><code>@AsterByte catch me up</code></p>
-      <p><span class="chat-name bot-name">AsterByte ✦</span>Here's what changed, what we decided, and what still needs an owner.</p>
-      <p><span class="chat-name">You</span><code>@AsterByte poll: Friday game? | Chess | Minecraft</code></p>
-      <p><span class="chat-name bot-name">AsterByte ✦</span>A short-lived poll, one changeable vote per person. No AI quota needed.</p>
-      <small>Illustrative examples. Responses depend on readable messages and your permissions.</small>
+    <div class="capability-ribbon" aria-label="Capabilities"><span>Catch-ups</span><span>Reminders</span><span>Team workflows</span><span>Safe actions</span><span>Tiny doses of fun</span></div>
+    <section class="demo-section" id="try-it">
+      <div class="section-intro"><p class="eyebrow">No command dictionary required</p><h2>You say it.<br>Byte gets to work.</h2><p>Mention AsterByte, reply to it, or use your server's prefix. Start with a sentence, not a settings screen.</p><div class="demo-controls" aria-label="Choose an illustrative example"><button type="button" data-demo="catchup" aria-pressed="true">Catch me up</button><button type="button" data-demo="reminder" aria-pressed="false">Set a reminder</button><button type="button" data-demo="poll" aria-pressed="false">Pick game night</button></div><p class="demo-note">An interactive illustration, not a live bot. No prompt is sent to AI.</p></div>
+      <div class="chat-demo" aria-label="Illustrative Discord conversation">
+        <div class="chat-top"><span><span aria-hidden="true">#</span> your-community</span><span class="example-tag">EXAMPLE</span></div>
+        <div class="chat-message"><span class="user-avatar" aria-hidden="true">Y</span><div><span class="chat-name">You <small>just now</small></span><p id="demo-prompt"><code>@AsterByte catch me up</code></p></div></div>
+        <div class="chat-message"><img class="chat-avatar" src="assets/asterbyte-avatar-v1.png" width="42" height="42" alt=""><div><span class="chat-name bot-name">AsterByte <span class="bot-label">APP</span></span><div id="demo-response" aria-live="polite"><p>Quick catch-up, coming through. ✦</p><ul><li><strong>Decided:</strong> game night is Friday.</li><li><strong>Next up:</strong> pick a game.</li><li><strong>Still open:</strong> what time works for everyone?</li></ul></div></div></div>
+        <div class="chat-bottom">Illustrative responses. Actual results depend on readable messages, permissions and quotas.</div>
+      </div>
     </section>
-    <section class="grid">
-      <article><h2>Start with a sentence</h2><p>Mention AsterByte, reply to it, use “AsterByte,” or a configured prefix. Say “starter pack” for a quick tour. Slash commands remain available.</p></article>
-      <article><h2>Remember what matters</h2><p>Catch up on a channel, extract action items, run saved workflows, and set durable reminders. Managers can opt into visible, time-limited scheduled digests.</p></article>
-      <article><h2>Permission-aware</h2><p>Discord permissions are checked before proposing an action and checked again immediately before execution.</p></article>
-      <article><h2>Small, opt-in fun</h2><p>Trivia, polls, dice, coin flips, and a daily conversation spark. No streak pressure, unsolicited pings, or fake activity. Playing and exact local invocations use no AI quota; interpreting loose wording may use AI.</p></article>
-    </section>
-    <section><h2>Your provider. Clear limits.</h2><p>The beta has a limited shared Groq account. Personal Groq and OpenRouter key support is implemented, with encrypted storage and no silent fallback to another account. Self-service connection currently works only for the operator on the bot's Mac; public HTTPS onboarding isn't deployed yet.</p><p>We use official APIs, not consumer chat logins, cookies, or subscription workarounds. Bot quotas and provider limits still apply. <a href="guide.html#accounts">Understand accounts and privacy →</a></p></section>
-    <section>
-      <h2>Support</h2>
-      <p>For a question, privacy request, security report, or beta issue, open a ticket in the <a href="https://github.com/adityasarade/asterbyte-support/issues">AsterByte support tracker</a>. Do not include bot tokens, API keys, private message content, or other secrets.</p>
-    </section>
-    <footer>© 2026 AsterByte · Independent private-beta project</footer>
+    <section class="feature-section"><div class="section-heading"><p class="eyebrow">Useful enough to become a habit</p><h2>Less channel chaos.<br>More “oh, that helped.”</h2></div><div class="grid">
+      <article><span class="feature-icon" aria-hidden="true">↳</span><p class="feature-number">01 / GET THE GIST</p><h3>Skip the scroll marathon.</h3><p>Catch up on recent messages. Pull out decisions and action items. Find the next step without rereading the entire chat.</p><code>“extract action items from this channel”</code></article>
+      <article><span class="feature-icon" aria-hidden="true">⌁</span><p class="feature-number">02 / KEEP THINGS MOVING</p><h3>A little help for future-you.</h3><p>Set reminders and reuse a workflow. Managers can enable visible, time-limited scheduled digests with Server Pro beta.</p><code>“run decision-log on this channel”</code></article>
+      <article><span class="feature-icon" aria-hidden="true">◇</span><p class="feature-number">03 / YOU HOLD THE KEYS</p><h3>A sidekick. Not a loose cannon.</h3><p>Supported server changes need your Discord permissions and confirmation. Access is checked again before the action runs.</p><code>“create a channel called roadmap”</code></article>
+      <article><span class="feature-icon" aria-hidden="true">✦</span><p class="feature-number">04 / MAKE ROOM FOR FUN</p><h3>Game night starts here.</h3><p>Polls, bite-sized trivia, dice and a daily conversation spark. Only when asked. No streak pressure or surprise pings.</p><code>“poll: Friday game? | Chess | Minecraft”</code></article>
+    </div></section>
+    <section class="character-note"><img src="assets/asterbyte-mark.svg" width="64" height="64" alt=""><div><p class="eyebrow">The AsterByte personality</p><h2>Warm voice. Clear boundaries.</h2><p>A bit curious, a bit playful, and practical first. No fake “done!” messages, no pretending to be human, and no jokes when you need a serious answer.</p></div></section>
+    <section class="provider-section"><div><p class="eyebrow">Your provider. Clear limits.</p><h2>Bring your brain.<br>We'll bring the interface.</h2></div><div><p>The beta has a limited shared Groq account. Personal Groq and OpenRouter keys are supported with encrypted storage and no silent account fallback. Self-service connection currently works only for the operator on the bot's Mac; public HTTPS onboarding isn't deployed yet.</p><p>Official APIs only—not consumer chat logins, cookies or subscription workarounds. Provider limits and bot quotas apply. Exact local games use no AI; interpreting loose wording may consume a request.</p><a class="secondary-link" href="guide.html#accounts">Understand accounts &amp; privacy <span aria-hidden="true">↗</span></a></div></section>
+    <section class="closing"><p class="eyebrow">Say hello in your server</p><h2>One mention.<br>A little less chaos.</h2><code>@AsterByte starter pack</code><p>Already in the beta? Start there. New here? Explore the guide—we're still in the workshop.</p><a class="button" href="guide.html">Get the quick tour <span aria-hidden="true">↗</span></a></section>
+    <section class="support"><h2>Need a hand?</h2><p>Use the <a href="https://github.com/adityasarade/asterbyte-support/issues">support tracker</a> for beta questions or privacy requests. Never include tokens, API keys or private conversation content. Read our <a href="security.html">security guidance</a> before reporting a vulnerability.</p><p class="availability">Current host: the operator's Mac. It must stay awake and online. No uptime guarantee or paid subscriptions.</p></section>
+    <footer><span>© 2026 AsterByte · Your community's useful little robot.</span><span><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="plans.html">Beta plans</a></span></footer>
   </main>
 </body>
 </html>
