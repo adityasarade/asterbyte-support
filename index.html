@@ -9,19 +9,29 @@
 </head>
 <body>
   <main>
-    <nav><a class="brand" href="index.html">AsterByte</a><span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a></span></nav>
+    <nav><a class="brand" href="index.html">AsterByte<span class="brand-dot">✦</span></a><span><a href="guide.html">Guide</a><a href="plans.html">Plans</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a></span></nav>
     <section class="hero">
-      <p class="eyebrow">Permission-aware Discord AI</p>
-      <h1>Turn conversations into useful, controlled work.</h1>
-      <p>AsterByte answers questions, summarizes channels, remembers opt-in conversations, runs reusable workflows, schedules reminders, and proposes server actions without bypassing Discord permissions.</p>
-      <div class="notice">Private beta · No payment is currently collected · Human confirmation is required for server-changing actions</div>
+      <p class="eyebrow">Your community's useful little robot</p>
+      <h1>Less catching up.<br>More doing together.</h1>
+      <p>AsterByte turns Discord conversations into clear next steps. Ask in normal language, save a useful workflow, or summon a little fun. Server changes stay under your control.</p>
+      <div class="actions"><a class="button" href="guide.html">Meet AsterByte →</a><a href="plans.html">What we're building</a></div>
+      <div class="notice">Invite-only private beta · No payments · Not yet Discord-verified · Runs while the operator's Mac is online</div>
+    </section>
+    <section class="chat-demo" aria-label="Example conversation, not a live bot">
+      <p class="eyebrow">One conversation. Useful outcomes.</p>
+      <p><span class="chat-name">You</span><code>@AsterByte catch me up</code></p>
+      <p><span class="chat-name bot-name">AsterByte ✦</span>Here's what changed, what we decided, and what still needs an owner.</p>
+      <p><span class="chat-name">You</span><code>@AsterByte poll: Friday game? | Chess | Minecraft</code></p>
+      <p><span class="chat-name bot-name">AsterByte ✦</span>A short-lived poll, one changeable vote per person. No AI quota needed.</p>
+      <small>Illustrative examples. Responses depend on readable messages and your permissions.</small>
     </section>
     <section class="grid">
-      <article><h2>Useful in chat</h2><p>Use slash commands, mention AsterByte, reply to it, or choose a custom server prefix.</p></article>
-      <article><h2>Operational</h2><p>Create on-demand or consent-visible scheduled channel summaries, reusable workflows, reminders, threads, channels, role changes, and announcements.</p></article>
+      <article><h2>Start with a sentence</h2><p>Mention AsterByte, reply to it, use “AsterByte,” or a configured prefix. Say “starter pack” for a quick tour. Slash commands remain available.</p></article>
+      <article><h2>Remember what matters</h2><p>Catch up on a channel, extract action items, run saved workflows, and set durable reminders. Managers can opt into visible, time-limited scheduled digests.</p></article>
       <article><h2>Permission-aware</h2><p>Discord permissions are checked before proposing an action and checked again immediately before execution.</p></article>
-      <article><h2>Tenant-isolated</h2><p>Quotas, memory, workflows, configuration, and audit records are scoped by Discord server and user.</p></article>
+      <article><h2>Small, opt-in fun</h2><p>Trivia, polls, dice, coin flips, and a daily conversation spark. No streak pressure, unsolicited pings, or fake activity. These tools use no AI quota.</p></article>
     </section>
+    <section><h2>Your provider. Clear limits.</h2><p>The beta has a limited shared Groq account. Personal Groq and OpenRouter key support is implemented, with encrypted storage and no silent fallback to another account. Self-service connection currently works only for the operator on the bot's Mac; public HTTPS onboarding isn't deployed yet.</p><p>We use official APIs, not consumer chat logins, cookies, or subscription workarounds. Bot quotas and provider limits still apply. <a href="guide.html#accounts">Understand accounts and privacy →</a></p></section>
     <section>
       <h2>Support</h2>
       <p>For a question, privacy request, security report, or beta issue, open a ticket in the <a href="https://github.com/adityasarade/asterbyte-support/issues">AsterByte support tracker</a>. Do not include bot tokens, API keys, private message content, or other secrets.</p>

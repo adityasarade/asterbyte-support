@@ -21,13 +21,15 @@
       <li>Recent channel messages only when a user invokes a channel summary or channel-input workflow, or a server manager enables a scheduled digest after AsterByte posts a visible notice in that channel.</li>
       <li>Optional conversation memory, reminder text, reusable workflow instructions, private-beta feedback, server settings, quota records, entitlement state, and confirmed-action audit records.</li>
       <li>Operational metadata such as provider/model, timestamps, success status, and error category. Stateless prompt text is not written to application logs or the database by default.</li>
+      <li>Optional dedicated Groq or OpenRouter API keys submitted only through the private connection form, stored with authenticated encryption, plus provider/connection timestamps. The connection belongs to your Discord user across servers. Credentials are excluded from data exports.</li>
+      <li>Transient poll/trivia votes, game/channel IDs, and expiry times held in memory for up to ten minutes (or until replacement/restart). Results do not list voters; AsterByte does not persist a game history.</li>
     </ul>
 
     <h2>Why we process it</h2>
     <p>We process this information to provide requested AI responses and automations, enforce Discord permissions and quotas, prevent abuse and duplicate execution, deliver reminders, maintain opt-in memory, support users, and improve reliability and security.</p>
 
     <h2>AI providers and subprocessors</h2>
-    <p>Prompt content needed for a response is sent to the AI provider configured for the request. The private beta currently supports Groq and may support OpenRouter. For action-like prompts, relevant current server channel and role names/IDs may be sent so the provider can propose valid targets. These providers process data under their own terms and privacy policies. Discord processes data required to operate the Discord platform.</p>
+    <p>Prompt content needed for a response is sent to the AI provider configured for the request: Groq or OpenRouter. Interactive requests use a connected personal key when present, without silent fallback; otherwise the limited shared beta account is used. Scheduled digests currently use the shared beta provider, not personal keys. A connection is validated through the selected provider's authenticated account/models API. For action-like prompts, accessible server channel and role names/IDs may be sent to propose valid targets. Providers process data under their own terms and privacy policies; Discord processes data required for its platform.</p>
 
     <h2>Storage and retention</h2>
     <ul>
@@ -36,6 +38,7 @@
       <li>Pending reminders and workflow definitions remain until executed, cancelled, or deleted. Completed reminder records are deleted after approximately 30 days.</li>
       <li>Usage metadata and completed action audit records are deleted after approximately 90 days.</li>
       <li>Scheduled digest definitions expire after 30 days unless a manager renews them. AsterByte does not persist the raw channel messages processed for a digest.</li>
+      <li>Encrypted personal keys remain until replaced, disconnected, or deleted. <code>/connect disconnect</code> removes the live connection across servers, not provider-side copies or recovery backups. Revoking the dedicated key in the provider dashboard invalidates it at its source. The local connection form is currently operator-only; public HTTPS onboarding is not deployed.</li>
       <li>The local private beta uses filesystem-restricted SQLite recovery snapshots. These can retain deleted data and currently require manual expiration; they are not automatically erased by <code>/data delete</code>. Contact support for deletion from recovery snapshots. Backups are not used for AI responses.</li>
     </ul>
 
@@ -43,7 +46,7 @@
     <p>Use <code>/privacy</code> for an in-product disclosure and <code>/data status</code>, <code>/data export</code>, or <code>/data delete</code> to inspect, export, or delete user-scoped records for a server. The export includes the stored record contents, not only counts. Say “forget this conversation” to clear your saved window in the current channel. Server managers can request deletion of server configuration and shared workflows through support; removing the app alone does not erase its database records. Some minimal security records may be retained where reasonably necessary to prevent abuse or comply with law.</p>
 
     <h2>Security</h2>
-    <p>AsterByte applies tenant scoping, parameterized storage, strict schemas, quotas, timeouts, requester-bound confirmations, repeated permission checks, action allowlists, audit records, and restricted automated mentions. No service can guarantee absolute security. Never send passwords, bot tokens, API keys, payment details, or highly sensitive personal data to the bot.</p>
+    <p>AsterByte applies tenant scoping, parameterized storage, strict schemas, quotas, timeouts, requester-bound confirmations, repeated permission checks, action allowlists, audit records, restricted mentions, and authenticated encryption for saved provider keys. The private form uses short-lived single-use links, same-origin checks, and no-store responses. Encryption does not protect against complete compromise of the bot host and master key. No service can guarantee absolute security. Never put passwords, tokens, API keys, payment details, or sensitive personal data in Discord messages or prompts; dedicated provider keys belong only in the private connection form.</p>
 
     <h2>Children</h2>
     <p>AsterByte is not directed to children below the minimum age required to use Discord in their country. If you believe a child has provided personal data contrary to applicable rules, contact support.</p>
