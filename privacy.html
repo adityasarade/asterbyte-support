@@ -10,7 +10,7 @@
 <body><main>
   <nav><a class="brand" href="index.html">AsterByte</a><span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a></span></nav>
   <article class="legal">
-    <p class="eyebrow">Effective 17 September 2026</p>
+    <p class="eyebrow">Effective 3 October 2026</p>
     <h1>Privacy Policy</h1>
     <p>This policy explains how the independent AsterByte project processes data when people install or use the AsterByte Discord application. AsterByte is currently a limited private beta operated from India.</p>
 
@@ -18,7 +18,7 @@
     <ul>
       <li>Discord identifiers for users, servers, channels, roles, interactions, and messages needed to route and authorize requests.</li>
       <li>Prompts submitted through commands, mentions, replies, or the configured prefix.</li>
-      <li>Recent channel messages only when a user invokes a summary feature or a server manager enables a scheduled digest after AsterByte posts a visible notice in that channel.</li>
+      <li>Recent channel messages only when a user invokes a channel summary or channel-input workflow, or a server manager enables a scheduled digest after AsterByte posts a visible notice in that channel.</li>
       <li>Optional conversation memory, reminder text, reusable workflow instructions, private-beta feedback, server settings, quota records, entitlement state, and confirmed-action audit records.</li>
       <li>Operational metadata such as provider/model, timestamps, success status, and error category. Stateless prompt text is not written to application logs or the database by default.</li>
     </ul>
@@ -32,15 +32,15 @@
     <h2>Storage and retention</h2>
     <ul>
       <li>Stateless <code>/ask</code> prompt and completion text is not stored by AsterByte after the response.</li>
-      <li>Opt-in chat memory retains only the configured recent-message window until the user resets or deletes it.</li>
+      <li>Opt-in chat memory retains only the configured recent-message window until the user resets or deletes it. Saying “remember this conversation” enables use of this context for 24 hours in that server/channel/user scope; after that, context use stops but saved messages remain until reset or deletion. Channel replies are visible to channel readers, even with user-scoped memory.</li>
       <li>Pending reminders and workflow definitions remain until executed, cancelled, or deleted. Completed reminder records are deleted after approximately 30 days.</li>
       <li>Usage metadata and completed action audit records are deleted after approximately 90 days.</li>
       <li>Scheduled digest definitions expire after 30 days unless a manager renews them. AsterByte does not persist the raw channel messages processed for a digest.</li>
-      <li>Backups, when production hosting is introduced, may retain deleted data for a limited recovery period disclosed here before use.</li>
+      <li>The local private beta uses filesystem-restricted SQLite recovery snapshots. These can retain deleted data and currently require manual expiration; they are not automatically erased by <code>/data delete</code>. Contact support for deletion from recovery snapshots. Backups are not used for AI responses.</li>
     </ul>
 
     <h2>Choices and deletion</h2>
-    <p>Use <code>/privacy</code> for an in-product disclosure and <code>/data status</code>, <code>/data export</code>, or <code>/data delete</code> to inspect, export, or delete user-scoped records for a server. The export includes the stored record contents, not only counts. Server managers can delete server configuration and shared workflows by removing the app or contacting support. Some minimal security records may be retained where reasonably necessary to prevent abuse or comply with law.</p>
+    <p>Use <code>/privacy</code> for an in-product disclosure and <code>/data status</code>, <code>/data export</code>, or <code>/data delete</code> to inspect, export, or delete user-scoped records for a server. The export includes the stored record contents, not only counts. Say “forget this conversation” to clear your saved window in the current channel. Server managers can request deletion of server configuration and shared workflows through support; removing the app alone does not erase its database records. Some minimal security records may be retained where reasonably necessary to prevent abuse or comply with law.</p>
 
     <h2>Security</h2>
     <p>AsterByte applies tenant scoping, parameterized storage, strict schemas, quotas, timeouts, requester-bound confirmations, repeated permission checks, action allowlists, audit records, and restricted automated mentions. No service can guarantee absolute security. Never send passwords, bot tokens, API keys, payment details, or highly sensitive personal data to the bot.</p>
