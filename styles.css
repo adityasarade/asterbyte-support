@@ -4,6 +4,7 @@ body { margin:0; background:radial-gradient(circle at 85% 0,#182344 0,transparen
 main { width:min(1040px,calc(100% - 40px)); margin:auto; }
 nav { display:flex; justify-content:space-between; align-items:center; padding:26px 0; border-bottom:1px solid var(--line); }
 nav span { display:flex; gap:20px; }
+nav>a.brand { display:inline-flex; align-items:center; gap:6px; white-space:nowrap; }
 a { color:#a9bdff; text-underline-offset:3px; } .brand { color:var(--text); text-decoration:none; font-weight:800; letter-spacing:.02em; }
 .hero { padding:88px 0 58px; max-width:850px; } h1 { font-size:clamp(2.4rem,6vw,5.3rem); line-height:1.02; letter-spacing:-.055em; margin:.15em 0 .35em; }
 h2 { margin-top:1.7em; line-height:1.2; } p,li { color:var(--muted); } .hero>p:not(.eyebrow) { font-size:1.2rem; max-width:720px; }
