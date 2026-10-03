@@ -10,7 +10,7 @@
 <body><main>
   <nav><a class="brand" href="index.html">Sparuko</a><span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a></span></nav>
   <article class="legal">
-    <p class="eyebrow">Effective 3 October 2026</p>
+    <p class="eyebrow">Effective 4 October 2026</p>
     <h1>Privacy Policy</h1>
     <p>This policy explains how the independent Sparuko project (formerly AsterByte) processes data when people install or use the Sparuko Discord application. The name change does not change the operator, application, data handling or user permissions. Sparuko is currently a limited private beta operated from India.</p>
 
@@ -23,6 +23,8 @@
       <li>Operational metadata such as provider/model, timestamps, success status, and error category. Stateless prompt text is not written to application logs or the database by default.</li>
       <li>Optional dedicated Groq or OpenRouter API keys submitted only through the private connection form, stored with authenticated encryption, plus provider/connection timestamps. The connection belongs to your Discord user across servers. Credentials are excluded from data exports.</li>
       <li>Transient poll/trivia votes, game/channel IDs, and expiry times held in memory for up to ten minutes (or until replacement/restart). Results do not list voters; Sparuko does not persist a game history.</li>
+      <li>One explicitly referenced recent bot text answer, only for conversational follow-ups with fresh read-permission checks; no ambient history is read and this context is not persisted unless you separately opted into saved memory.</li>
+      <li>Optional verified Top.gg vote metadata (your Discord ID, UTC day, vote creation and expiry) if voting is activated and you request verification. Your Discord ID is sent to Top.gg for this check; no prompt, provider key, channel history or payment data is sent to Top.gg. Voting integration is currently disabled pending a public listing.</li>
     </ul>
 
     <h2>Why we process it</h2>
@@ -38,6 +40,7 @@
       <li>Pending reminders and workflow definitions remain until executed, cancelled, or deleted. Completed reminder records are deleted after approximately 30 days.</li>
       <li>Usage metadata and completed action audit records are deleted after approximately 90 days.</li>
       <li>Minimal daily quota counters (UTC day, server/user scope and count; no prompt text) survive content deletion to prevent quota-reset abuse. Only current/previous UTC-day counters remain after hourly cleanup while online; cleanup also runs at startup. The operator-wide aggregate attempt counter has no user identifier. Your daily counters are included in exports.</li>
+      <li>Vote reward records are global to your user, included in exports and removed by data deletion in any server. They expire at vote expiry or UTC midnight, with hourly/startup cleanup. Minimal ping sender/target cooldown IDs and expiry times survive content deletion only until their one/five-minute expiry and subsequent hourly/startup cleanup, to prevent notification abuse.</li>
       <li>Scheduled digest definitions expire after 30 days unless a manager renews them. Sparuko does not persist the raw channel messages processed for a digest.</li>
       <li>Encrypted personal keys remain until replaced, disconnected, or deleted. <code>/connect disconnect</code> removes the live connection across servers, not provider-side copies or recovery backups. Revoking the dedicated key in the provider dashboard invalidates it at its source. The local connection form is currently operator-only; public HTTPS onboarding is not deployed.</li>
       <li>The local private beta uses filesystem-restricted SQLite recovery snapshots. These can retain deleted data and currently require manual expiration; they are not automatically erased by <code>/data delete</code>. Contact support for deletion from recovery snapshots. Backups are not used for AI responses.</li>
